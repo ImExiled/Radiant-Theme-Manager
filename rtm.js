@@ -28,12 +28,9 @@ var rtm = {
 
 		// Everything we append should go here
 		rtm.getThemeList('https://rawgit.com/bentenz5/Radiant-Theme-Manager/master/themes.json');
-		
+
 		// Credits and version
 		rtm.addMenuItem('', 'rtm-credits', 'Made by CSxKING.');
 		rtm.addMenuItem('', 'rtm-credits-rcs', 'RCS by Radiant, whos team includes xBytez.');
 	}
 };
-
-
-//https://csxking.me/nce/THEME.css
