@@ -6,7 +6,7 @@ Then in the chrome console, run `rtm.on();`
 
 To load your own theme list, run `rtm.getThemeList('https://example.com/YourThemeListHere.json')`
 
-Theme json files work simply. Make a theme file, put it somewhere where CORS wont get in the way and load it with the above command. Format below
+Theme json files work simply. Make a theme file, put it somewhere where CORS wont get in the way and load it with the above command. Format below.
 
 ```json
 {
@@ -14,5 +14,7 @@ Theme json files work simply. Make a theme file, put it somewhere where CORS won
   "theme-name2-here":"theme-link2-here.css"
 }
 ```
+
+Also, if you'd like your theme added to my built-in list, submit a pull request on `themes.json`
 
 That should be it. Themes are written in CSS. Obviously.
