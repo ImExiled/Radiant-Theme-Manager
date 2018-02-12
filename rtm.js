@@ -25,11 +25,13 @@ var rtm = {
 		// Create the menu section
 		$('#rcs-menu-t').after('<div class="group" id="rtm-sect"><span>Radiant Theme Manager</span></div>');
 		$('#rtm-sect').after('<div id="rtm-sect-t"></div>');
+
 		// Everything we append should go here
-
 		rtm.getThemeList('https://rawgit.com/bentenz5/Radiant-Theme-Manager/master/themes.json');
-
+		
 		// Credits and version
+		rtm.addMenuItem('', 'rtm-credits', 'Made by CSxKING.');
+		rtm.addMenuItem('', 'rtm-credits-rcs', 'RCS by Radiant, whos team includes xBytez.');
 	}
 };
 
