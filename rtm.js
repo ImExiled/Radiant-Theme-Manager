@@ -40,7 +40,7 @@ var rtm = {
 	removeCheck: function(item) {
 		$(item + ' > .rsrow > .truncate > .item').removeClass('selected');
 	},
-	on: function() {
+	on: function(themelistfile) {
 		// Append jQuert 3.3.1 because plug hates me.
 		$('head').append('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>');
 
@@ -49,7 +49,13 @@ var rtm = {
 		$('#rtm-sect').after('<div id="rtm-sect-t"></div>');
 
 		// Everything we append should go here
-		rtm.getThemeList('https://rawgit.com/bentenz5/Radiant-Theme-Manager/master/themes.json');
+		// 
+		
+		if( typeof themelistfile == 'undefined' ) {
+			rtm.getThemeList('https://rawgit.com/bentenz5/Radiant-Theme-Manager/master/themes.json');
+		} else {
+			rtm.getThemeList(themelistfile);
+		}
 
 		$('#chat-messages').append('<div class="cm rsshit sml message rs-log-green" id="rcs-1518950671516"><div class="badge-box"></div><div class="msg"><div class="from"><span class="timestamp" style="display: inline;">NA:NA</span></div><div class="text">RTM Loaded!</div></div><div class="rcs-delete" style="display: none;">Hide</div></div>');
 
