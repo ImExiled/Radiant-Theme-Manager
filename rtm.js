@@ -30,6 +30,15 @@ function eraseCookie(name) {
     createCookie(name, "", -1);
 }
 
+var rtmGotToSaved = {
+	lists: [
+		// links
+	],
+	names: [
+		// names
+	]
+};
+
 
 var rtm = {
 	loadTheme: function(url, name) {
@@ -55,12 +64,18 @@ var rtm = {
         $('#rtm-sect-t').append('<a id="' + id + '" href="' + content + '"><div class="rsrow""><div class="rscol-md-12 truncate"><div class="rcs item"><i class="icon icon-check-blue"></i><span>' + text + '</span></div></div></div></a>');
     },
     getThemeList: function(url) {
+    	rtmGotToSaved.lists.push(url);
 		$.getJSON(url, function(data) {
 			$.each(data, function(key, value) {
 				rtm.addThemeItem(value, key + "-theme-btn", key);
+				rtmGotToSaved.names.push(key);
 				console.warn(':::: ' + value + "::::");
 			});
 		});
+	},
+	installTheme: function() {
+		var toInstall = prompt("Enter a URL to install", "https://rawgit.com/bentenz5/Radiant-Theme-Manager/master/themes.json");
+		rtm.getThemeList(toInstall);
 	},
 	disableThemes: function() {
 		setTimeout(function() {
@@ -96,11 +111,11 @@ var rtm = {
 
 	},
 	saveThemes: function() {
-		document.cookie = "rtmSaved=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-		var defaultVal = '{"lists":["https://rawgit.com/bentenz5/Radiant-Theme-Manager/master/themes.json"],"names":["NCE"]}';
-		var themesToSave = prompt('Please paste in JSON code of the themes you would like to save. An example of this can be preset in the textbox. Feel free to either use it, or take a look at it and add your own.', defaultVal);
-		console.warn(themesToSave);
-		document.cookie='rtmSaved=' + themesToSave + "; expires=Fri, 18 Feb 2038 12:00:00 UTC; path=/";
+		var rtmToSave = JSON.stringify(rtmGotToSaved);
+		console.warn(rtmToSave);
+		document.cookie='rtmSaved=' + rtmToSave + "; expires=Fri, 18 Feb 2038 12:00:00 UTC; path=/";
+		alert("Theme list saved!");
+
 	},
 	clearSavedThemes: function() {
 		document.cookie = "rtmSaved=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
@@ -120,7 +135,7 @@ var rtm = {
 		} else {
 			rtm.getThemeList(themelistfile);
 		}
-		rtm.addMenuItem('javascript:rtm.saveThemes();', 'Save Theme List (WIP/Advanced)', 'rtm-save-themes-btn');
+		rtm.addMenuItem('javascript:rtm.saveThemes();', 'Save Theme List', 'rtm-save-themes-btn');
 		$('#chat-messages').append('<div class="cm rsshit sml message rs-log-green" id="rcs-1518950671516"><div class="badge-box"></div><div class="msg"><div class="from"><span class="timestamp" style="display: inline;">NA:NA</span></div><div class="text">RTM Loaded!</div></div><div class="rcs-delete" style="display: none;">Hide</div></div>');
 
 		// Credits and version
@@ -138,7 +153,7 @@ var rtm = {
 		// Everything we append should go here
 		rtm.loadSavedThemes();
 		rtm.addMenuItem('javascript:rtm.clearSavedThemes();', 'Clear Saved Themes', 'rtm-clear-saved-btn');
-		rtm.addMenuItem('javascript:rtm.saveThemes();', 'Save Theme List (WIP/Advanced)', 'rtm-save-themes-btn');
+		rtm.addMenuItem('javascript:rtm.saveThemes();', 'Save Theme List', 'rtm-save-themes-btn');
 
 		$('#chat-messages').append('<div class="cm rsshit sml message rs-log-green" id="rcs-1518950671516"><div class="badge-box"></div><div class="msg"><div class="from"><span class="timestamp" style="display: inline;">NA:NA</span></div><div class="text">RTM Loaded!</div></div><div class="rcs-delete" style="display: none;">Hide</div></div>');
 
