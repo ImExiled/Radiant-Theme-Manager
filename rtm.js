@@ -137,7 +137,7 @@ var rtm = {
 			rtm.getThemeList(themelistfile);
 		}
 		rtm.addMenuItem('javascript:rtm.saveThemes();', 'Save Theme List', 'rtm-save-themes-btn');
-		rtm.addmenuItem('javascript:rtm.installTheme();', 'Install Theme Package', 'rtm-theme-install-btn');
+		rtm.addMenuItem('javascript:rtm.installTheme();', 'Install Theme Package', 'rtm-theme-install-btn');
 		$('#chat-messages').append('<div class="cm rsshit sml message rs-log-green" id="rcs-1518950671516"><div class="badge-box"></div><div class="msg"><div class="from"><span class="timestamp" style="display: inline;">NA:NA</span></div><div class="text">RTM Loaded!</div></div><div class="rcs-delete" style="display: none;">Hide</div></div>');
 
 		// Credits and version
@@ -156,7 +156,7 @@ var rtm = {
 		rtm.loadSavedThemes();
 		rtm.addMenuItem('javascript:rtm.clearSavedThemes();', 'Clear Saved Themes', 'rtm-clear-saved-btn');
 		rtm.addMenuItem('javascript:rtm.saveThemes();', 'Save Theme List', 'rtm-save-themes-btn');
-		rtm.addmenuItem('javascript:rtm.installTheme();', 'Install Theme Package', 'rtm-theme-install-btn');
+		rtm.addMenuItem('javascript:rtm.installTheme();', 'Install Theme Package', 'rtm-theme-install-btn');
 
 		$('#chat-messages').append('<div class="cm rsshit sml message rs-log-green" id="rcs-1518950671516"><div class="badge-box"></div><div class="msg"><div class="from"><span class="timestamp" style="display: inline;">NA:NA</span></div><div class="text">RTM Loaded!</div></div><div class="rcs-delete" style="display: none;">Hide</div></div>');
 
