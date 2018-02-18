@@ -1,0 +1,23 @@
+The below is what the json for a theme list looks like when not minified. This is also refered to as beautified.
+
+{
+   "lists":[
+      "https://rawgit.com/bentenz5/Radiant-Theme-Manager/master/themes.json",
+      "https://example.com/theme2.json",
+      "etc"
+   ],
+   "names":[
+      "NCE",
+      "NameInRTMList2",
+      "etc"
+   ]
+}
+
+You MUST minify the JSON to have it load in RTM. Below is what minifed json looks like.
+
+{"lists":["https://rawgit.com/bentenz5/Radiant-Theme-Manager/master/themes.json","https://example.com/theme2.json","etc"],"names":["NCE","NameInRTMList2","etc"]}
+
+Useful links:
+Json Minifier/Beautifier: https://jsonformatter.org/
+
+Hope this helps until I figure out a better saving solution.
