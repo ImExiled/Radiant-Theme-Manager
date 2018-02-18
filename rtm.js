@@ -111,6 +111,7 @@ var rtm = {
 
 	},
 	saveThemes: function() {
+		document.cookie = "rtmSaved=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 		var rtmToSave = JSON.stringify(rtmGotToSaved);
 		console.warn(rtmToSave);
 		document.cookie='rtmSaved=' + rtmToSave + "; expires=Fri, 18 Feb 2038 12:00:00 UTC; path=/";
