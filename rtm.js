@@ -75,7 +75,11 @@ var rtm = {
 	},
 	installTheme: function() {
 		var toInstall = prompt("Enter a URL to install", "https://rawgit.com/bentenz5/Radiant-Theme-Manager/master/themes.json");
-		rtm.getThemeList(toInstall);
+		if( !toInstall == null ) {
+			rtm.getThemeList(toInstall);
+		} else {
+			console.error("Theme installation aborted. Reason: Abort by user.");
+		}
 	},
 	disableThemes: function() {
 		setTimeout(function() {
