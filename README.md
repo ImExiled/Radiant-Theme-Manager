@@ -23,3 +23,5 @@ about saving all the possible variables.
 Also, if you'd like your theme added to my built-in list, submit a pull request on `themes.json`
 
 That should be it. Themes are written in CSS. Obviously.
+
+Edit: Theme saving is now relatively complete. Themes can be loaded and saved on the fly using json files. Individual component saving soon(TM)
